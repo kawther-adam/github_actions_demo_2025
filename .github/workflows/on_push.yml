@@ -1,0 +1,12 @@
+name: Github Actions on push
+on: push
+
+jobs:
+ on-push-job:
+ runs-on: ubuntu-latest
+
+ steps:
+  name: First Step
+  run: echo "This is a step within the workflow"
+       ls- lart
+
