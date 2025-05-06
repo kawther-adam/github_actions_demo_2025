@@ -11,9 +11,9 @@ jobs:
       - name: First Step
       - uses: actions/checkout@v4
         run: |
-        pwd
-        ls -lart
-        cd. /github_actions_demo_2025
-        ls- lart
+         pwd
+         ls -lart
+      
+      
 
 
