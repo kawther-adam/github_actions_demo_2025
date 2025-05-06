@@ -9,8 +9,11 @@ jobs:
 
     steps:
       - name: First Step
+      - uses: actions/checkout@v4
         run: |
-          echo "This is a step within the workflow"
-          ls -lart
+        pwd
+        ls -lart
+        cd. /github_actions_demo_2025
+        ls- lart
 
 
