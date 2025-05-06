@@ -7,13 +7,15 @@ jobs:
   checkout_git-repo:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Rep
-        uses:  actions/checkout@v4
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
       - name: Install Tree
         run: sudo apt install tree -y
-        name: investigative repo
-        run: 
-         pwd
-         ls -lart
+
+      - name: Investigate Repo
+        run: |
+          pwd
+          ls -lart
 
 
