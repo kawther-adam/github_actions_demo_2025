@@ -4,11 +4,16 @@ on:
   workflow_dispatch:
 
 jobs:
-  first-demo-job:
+  checkout_git-repo:
     runs-on: ubuntu-latest
     steps:
-      - name: First step
-        run: echo "This is a step within a job within a workflow"
+      - name: Checkout Rep
+        uses:  actions/checkout@v4
+      - name: Install Tree
+        run: sudo apt install tree -y
+        name: investigative repo
+        run: 
+         pwd
+         ls -lart
 
-      - name: List All Files in Current Directory
-        run: ls -lart
+
