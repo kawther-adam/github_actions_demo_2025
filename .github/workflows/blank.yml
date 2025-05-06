@@ -1,21 +1,20 @@
 name: Demo Github Actions
-
 on: 
   workflow_dispatch:
 
 jobs:
   checkout_git-repo:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v4
-
+        run: git clone https://github.com/kawther-adam/github_actions_demo_2025.git
+#        uses: actions/checkout@v4
       - name: Install Tree
         run: sudo apt install tree -y
-
       - name: Investigate Repo
         run: |
           pwd
-          ls -lart
+          tree -a
 
 
