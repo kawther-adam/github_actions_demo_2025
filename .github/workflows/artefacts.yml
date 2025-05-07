@@ -16,4 +16,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
          name: my_file_to_download
-         path: /home/runner/work/github_actions_demo_2025/my_file_to_download 
+         path: /home/runner/work/github_actions_demo_2025/github_actions_demo_2025/my_file_to_download 
