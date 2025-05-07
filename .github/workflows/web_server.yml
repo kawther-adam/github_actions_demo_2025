@@ -1,0 +1,12 @@
+name: Deploying multiple runners
+on: workflow_dispatch
+
+jobs:
+  clone-website-and-run-podaman:
+  runs-on: ubuntu-latest
+
+  steps: 
+  name: Git Clone Repo
+  run: git clone
+  name: Check Website Files
+  run: ls -lart
