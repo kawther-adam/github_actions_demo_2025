@@ -22,3 +22,9 @@ jobs:
 
       - name: Test Web Service
         run: python3 -c "import requests; r=requests.get('http://localhost:80');print(r.status_code)"
+testing-api-availability:
+  runs on: ubuntu-latest
+
+  steps:
+    -name: Ping The Service
+    run: ping 8.8.8.8
