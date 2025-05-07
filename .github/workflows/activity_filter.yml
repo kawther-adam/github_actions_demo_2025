@@ -1,13 +1,13 @@
 name: Activity Filters
 on: 
   pull_request:
-  type: [synchronize]
+    types: [synchronize]
   workflow_dispatch:
 
 jobs:
-  any-old-jon-demo:
+  any-old-job-demo:
     runs-on: ubuntu-latest
 
     steps:
-     -name: Any Old Step
-     run: echo yada dada
+      - name: Any Old Step
+        run: echo "yada dada"
