@@ -2,21 +2,25 @@ name: Deploying multiple runners
 on: workflow_dispatch
 
 jobs:
-  clone-website-and-run-podaman:
-  runs-on: ubuntu-latest
+  clone-website-and-run-podman:
+    runs-on: ubuntu-latest
 
-  steps: 
-  -name: Git Clone Repo
-  run: git clone https://github.com/kawther-adam/Javascript.git
-  -name: Move Website files
-  run: sudo mv ./Javascript/* /usr/share/nginx/html/
-  -name: Check Website Files
-  run: ls -lart /usr/share/nginx/html/
-  name: Start And Enable nginx
-  run: |
-     sudo systemctl enable
-     sudo systemctl start
- 
-  -name: Test Web Service
-  run: curl localhost:8080
-  # run: python3 -c "import requests;" r=requests.get('https://localhost:8080');print(r.status_code)
+    steps:
+      - name: Git Clone Repo
+        run: git clone https://github.com/kawther-adam/Javascript.git
+
+      - name: Move Website files
+        run: sudo mv ./Javascript/* /usr/share/nginx/html/
+
+      - name: Check Website Files
+        run: ls -lart /usr/share/nginx/html/
+
+      - name: Start And Enable nginx
+        run: |
+          sudo systemctl start nginx
+          sudo systemctl enable nginx
+
+      - name: Test Web Service
+        run: python3 -c "import requests;" r=requests.get('https://localhost:8080');print(r.status_code)
+
+  # 
