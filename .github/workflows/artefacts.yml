@@ -1,0 +1,19 @@
+name: Demo Github Actions
+on: 
+  workflow_dispatch:
+
+jobs:
+  checkout_git-repo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Make the file
+        run: |
+         touch my_file_download
+         echo "Some stuff" >> my_file_to_download
+         echo "More stuf" >> my_file_to_download
+      - name: Download File To Artifact
+        uses: actions/upload-artifact@v4
+        with:
+         name: my_file_to_download
+         path: /home/runner/work/github_actions_demo_2025/my_file_to_download 
