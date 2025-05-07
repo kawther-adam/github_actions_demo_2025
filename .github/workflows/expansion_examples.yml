@@ -1,0 +1,12 @@
+name: Expansion and Other Features
+on: Workflow_dispatch
+
+jobs: 
+  show-meta-data-of-system:
+  runs-on: ubuntu-latest
+
+  steps:
+   -name: Get Github Context
+   run: echo "${{ github }}"
+   -name: Get Github Context
+   run: echo ${{toJSON( github )}}
