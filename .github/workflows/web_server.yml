@@ -2,7 +2,7 @@ name: Deploying multiple runners
 on: workflow_dispatch
 
 jobs:
-  clone-website-and-run-podman:
+  clone-website-and-test-service:
     runs-on: ubuntu-latest
 
     steps:
@@ -21,11 +21,12 @@ jobs:
           sudo systemctl enable nginx
 
       - name: Test Web Service
-        run: python3 -c "import requests; r=requests.get('http://localhost:80');print(r.status_code)"
-testing-api-availability:
-  runs on: ubuntu-latest
+        run: python3 -c "import requests; r=requests.get('http://localhost:80'); print(r.status_code)"
 
-  steps:
-    needs: [clone-website-test-service]
-    -name: Ping The Service
-    run: ping 8.8.8.8 -n 100
+  testing-api-availability:
+    needs: clone-website-and-test-service
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Ping The Service
+        run: ping -n 5 8.8.8.8
