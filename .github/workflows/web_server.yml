@@ -21,6 +21,6 @@ jobs:
           sudo systemctl enable nginx
 
       - name: Test Web Service
-        run: python3 -c "import requests;" r=requests.get('https://localhost:8080');print(r.status_code)
+        run: python3 -c "import requests;" r=requests.get('https://localhost:80');print(r.status_code)
 
   # 
