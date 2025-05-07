@@ -26,5 +26,6 @@ testing-api-availability:
   runs on: ubuntu-latest
 
   steps:
+    needs: [clone-website-test-service]
     -name: Ping The Service
-    run: ping 8.8.8.8
+    run: ping 8.8.8.8 -n 100
